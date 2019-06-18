@@ -4,8 +4,11 @@
 # name of the character.
 
 image bg = "bg2.jpg"
+image bgx = "bgx.png"
 image elle = "girl.png"
 image haiji = "supesule.png"
+image bg2 = "backdrop1.jpg"
+image intromovie = Movie(play="intromovie.ogv", mask="intromovie.ogv")
 
 define h = Character("Captain Haiji")
 define i = Character("Welcome Superhero in training")
@@ -13,8 +16,9 @@ define e = Character("Lady Elle")
 # The game starts here.
 
 label start:
+    $ renpy.movie_cutscene("intromovie.ogv")
     play music "theme.mp3"
-    scene bg
+    scene bgx
     with Fade(0.9, 0.0, 0.9)
     show elle at left
     with Fade(0.9, 0.0, 0.9)
@@ -28,7 +32,11 @@ label start:
             jump yes
 
     label yes:
+        scene bg2
+        with Fade(0.9, 0.0, 0.9)
     i"Choose your hero!"
+    show elle at right with moveinleft
+    show haiji at left with moveinleft
     menu:
         "Captain Haiji":
             jump captainHaiji
