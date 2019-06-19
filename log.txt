@@ -1,0 +1,15 @@
+Mon Jun 17 11:01:38 2019
+Linux-4.15.0-51-generic-x86_64-with-debian-buster-sid
+Ren'Py 7.3.0.271
+ 
+
+Bootstrap to the start of init.init took 0.10s
+Early init took 0.28s
+Loader init took 2.60s
+Loading error handling took 3.62s
+Loading script took 4.75s
+Loading save slot metadata. took 3.83s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 30.80s
+Loading analysis data took 2.42s
