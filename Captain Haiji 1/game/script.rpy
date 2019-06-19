@@ -1,13 +1,23 @@
-﻿define h = Character("Captain Haiji")
-
+# Declare character used by this game.
+define h = Character ('Captain Haiji')
 
 # The game starts here.
 
+image bg = "bg2.jpg"
+image bg2 = "backdrop1.jpg"
+image haiji = "supesule.png"
+
+
 label start:
+    play music "theme.mp3"
+
+    scene bg
+    with Fade(0.9, 0.0, 0.9)
+
 
     h"Lets know a little about hygine"
 
-
+    h"Great idea, lets goo"
     h"Good hygine, Good health"
 
     h "Do you know to maintain good hygine you must also maintain cleanness?"
@@ -78,7 +88,7 @@ label start:
 
     label justSleep:
 
-        h"Really, i think your teeth are in danger!  "
+        h"Really, i think your teeth are in danger!"
 
 
 
