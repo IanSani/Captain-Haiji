@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 35: end of line expected.
-    show elle with moveinleft at right
-                              ^
-
-File "game/script.rpy", line 36: end of line expected.
-    show haiji with moveinleft at left
-                               ^
+File "game/script.rpy", line 121: end of line expected.
+    show haiji at center with moveinbottom with hpunch
+                                           ^
 
 Ren'Py Version: Ren'Py 7.2.2.491
-Tue Jun 18 12:54:13 2019
+Wed Jun 19 17:03:48 2019

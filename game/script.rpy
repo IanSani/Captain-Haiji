@@ -8,10 +8,16 @@ image bgx = "bgx.png"
 image elle = "girl.png"
 image haiji = "supesule.png"
 image bg2 = "backdrop1.jpg"
+image bg3 = "iii.jpg"
+image bg4 = "v.jpg"
+image bg5 = "vii.jpg"
+image bg6 = "viii.jpg"
+image bg7 = "x.jpg"
+image bg8 = "ii.jpg"
 image intromovie = Movie(play="intromovie.ogv", mask="intromovie.ogv")
 
 define h = Character("Captain Haiji")
-define i = Character("Welcome Superhero in training")
+define i = Character("")
 define e = Character("Lady Elle")
 # The game starts here.
 
@@ -24,11 +30,15 @@ label start:
     with Fade(0.9, 0.0, 0.9)
     show haiji at right
     with Fade(0.7, 0.0, 0.7)
-    i"Today we are going to try save Manners-land. Are you ready?"
+    # i"Today is your first day in superhero school. Are you ready?"
+    $ name = renpy.input(" Whats your name?")
+    $ name = name.strip()
+    i "Welcome [name]"
+    i"Today is your first day in superhero school. Are you ready [name]?"
     menu:
-        "Yes!!":
+        "YES!!":
             jump yes
-        "Louder YES!!!":
+        "LOUDER YES!!!":
             jump yes
 
     label yes:
@@ -43,7 +53,13 @@ label start:
         "Lady Elle":
             jump superElle
     label captainHaiji:
-        h"Hey there!! Ready to save the world!!"
+        hide haiji
+        hide elle
+        scene bg3
+        with Fade(0.9, 0.0, 0.9)
+        show haiji at right with moveinleft
+        h"Hi [name]! My name is Captain Haiji, i will be your supehero trainer"
+        h"Lets make you a superhero"
         h"What do we say to mummy when she buys us a new toy?"
         menu:
             "Thank you mummy!!":
@@ -51,7 +67,12 @@ label start:
             "Just start playing with the toy":
                 jump walkAway
         label sayThankYou:
-            h"Excellent kiddo, one step closer to saving the world"
+            hide haiji
+            show haiji at center with moveinbottom
+            h"EXCELLENT!!!Good start [name]"
+            scene bg4
+            hide haiji
+            show haiji at center with moveintop
             h"I want something from daddy, what do i do?"
             menu:
                 "Say Please!!":
@@ -59,15 +80,22 @@ label start:
                 "Cry and shout till he gives you what you want":
                     jump screamShout
             label sayPlease:
-                h"Super!!! You are the best side-kick"
-                h"I want to go over at the neighbour's for a birthday,what should i tell an adult?"
+                h"SUPER!!! You are the best side-kick"
+                scene bg5
+                hide haiji
+                show haiji at left with moveintop
+                h"I want to go over at the neighbour's for a birthday,what should i do?"
                 menu:
-                    "Ask Mummy for permission":
+                    "Ask for permission before i go":
                         jump askPermission
                     "Attend the birthday anyway":
                         jump attendBirthday
                 label askPermission:
-                    h"Perfect!!!!Go have fun "
+                    h"YIPEEE!!!!Go have fun "
+                    hide haiji
+                    scene bg6
+                    with Fade(0.9, 0.0, 0.9)
+                    show haiji at center with moveinright
                     h"Is it right to knock closed doors before entering?"
                     menu:
                         "Knock the door,then enter":
@@ -75,7 +103,11 @@ label start:
                         "Just enter cause i can":
                             jump enterDoor
                     label knockDoor:
-                        h"SUPER! you are amazing at this"
+                        h"WOW!!! You are amazing at this"
+                        hide haiji
+                        scene bg7
+                        with Fade(0.9, 0.0, 0.9)
+                        show haiji at right with moveinbottom
                         h"You just sneezed, what is the right thing to do?"
                         menu:
                             "Say Excuse Me":
@@ -83,7 +115,13 @@ label start:
                             "Continue with what you were doing":
                                 jump ignore
                         label excuseMe:
-                            h"BOOM!! You are officially a superhero"
+                            hide haiji
+                            with Fade(0.9, 0.0, 0.9)
+                            scene bg8 with hpunch
+                            # scene bg8 with hpunch
+                            # scene bg8 with hpunch
+                            show haiji at center with moveinbottom
+                            h"BOOM!! Welcome to the team Super [name]"
                             return
                         label ignore:
                             h"OOH!! OOH!! No becoming a superhero today."
