@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 6: expected statement.
-    ﻿define h = character('Haiji')
-              ^
+File "game/script.rpy", line 59: indentation mismatch.
 
 Ren'Py Version: Ren'Py 7.3.0.271
-Wed Jun 19 12:24:55 2019
+Wed Jun 19 19:16:04 2019
