@@ -1,71 +1,45 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 18, in script
-    with Fade(0.9, 0.0, 0.9)
-  File "game/screens.rpy", line 243, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 243, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 248, in execute
-    if quick_menu:
-  File "game/screens.rpy", line 250, in execute
-    hbox:
-  File "game/screens.rpy", line 264, in execute
-    textbutton _("Quit") action quit()
-  File "game/screens.rpy", line 264, in keywords
-    textbutton _("Quit") action quit()
-NameError: name 'quit' is not defined
+While processing the color property of style label_text:
+  File "renpy/common/00start.rpy", line 79, in _init_language
+    renpy.change_language(language)
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+Exception: Color string u'black' must be 3, 4, 6, or 8 hex digits long.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 18, in script
-    with Fade(0.9, 0.0, 0.9)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/ast.py", line 1375, in execute
-    renpy.exports.with_statement(trans, paired)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/exports.py", line 1578, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 2240, in do_with
-    clear=clear)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 2690, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 3074, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 534, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 534, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 534, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 534, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 534, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/screen.py", line 424, in visit_all
-    callback(self)
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/core.py", line 3074, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/screen.py", line 434, in per_interact
-    self.update()
-  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/display/screen.py", line 619, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 243, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 243, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 248, in execute
-    if quick_menu:
-  File "game/screens.rpy", line 250, in execute
-    hbox:
-  File "game/screens.rpy", line 264, in execute
-    textbutton _("Quit") action quit()
-  File "game/screens.rpy", line 264, in keywords
-    textbutton _("Quit") action quit()
-  File "<screen language>", line 264, in <module>
-NameError: name 'quit' is not defined
+  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/main.py", line 525, in main
+    run(restart)
+  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/main.py", line 71, in run
+    renpy.translation.init_translation()
+  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/translation/__init__.py", line 558, in init_translation
+    renpy.store._init_language()  # @UndefinedVariable
+  File "renpy/common/00start.rpy", line 79, in _init_language
+    renpy.change_language(language)
+  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/translation/__init__.py", line 641, in change_language
+    i()
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+  File "style.pyx", line 795, in renpy.style.rebuild
+  File "style.pyx", line 788, in renpy.style.build_styles
+  File "style.pyx", line 680, in renpy.style.build_style
+  File "style.pyx", line 680, in renpy.style.build_style
+  File "style.pyx", line 709, in renpy.style.build_style
+  File "style.pyx", line 706, in renpy.style.build_style
+  File "gen/style_functions.pyx", line 757, in style_functions.color_property
+  File "/Users/owner/Desktop/renpy-7.2.2-sdk/renpy/color.py", line 158, in __new__
+    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
+Exception: Color string u'black' must be 3, 4, 6, or 8 hex digits long.
 
 Darwin-18.6.0-x86_64-i386-64bit
 Ren'Py 7.2.2.491
-TEAM AWESOME 
-Mon Jun 17 18:41:23 2019
+TEAM SUPERS 
+Thu Jun 20 12:38:04 2019
