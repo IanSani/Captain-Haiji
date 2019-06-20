@@ -64,7 +64,7 @@ label start:
     show haiji at right with moveinleft
     menu:
 
-        "Do you have interest in knowing little about hygine?":
+        "Are you interested in knowing a little about hygine?":
                                         jump yesIdo
 
                                         label yesIdo:
@@ -75,11 +75,11 @@ label start:
                                             h"well to maintain good hygine be clean, eat clean staffs, and wash hands after visiting washrooms"
 
 
-        "You good, and not interested":
+        "No i am not interested":
                                         jump iDont
                                         label iDont:
 
-                                        h"I guess i have to stick to my hygine principle, that means we can't agree, i am sorry!"
+                                        h"I guess i have to stick to my hygine principles, that means we can't agree, i am sorry!"
 
 
 
@@ -103,22 +103,22 @@ label start:
 
             label takeSoda:
 
-            h"Oops it will just add gas to your stomach and excess sugar to body!"
+            h"Oops!! it will just add gas to your stomach and excess sugar to your body!"
 
     scene bg7
     with Fade(0.9, 0.0, 0.9)
     show haiji at right with moveinbottom
 
-    h"What do you do before sleeping?"
+    h"Do you brush your teeth before sleeping?"
     menu:
 
-        "Brush your teeth?":
+        "Yes i do brush":
 
                         jump brushTeeth
                         label brushTeeth:
 
                         h"Thats great for your teeth to be strong and it also prevents infections"
-        "Just relax and sleep":
+        "No i forget":
                         jump justSleep
 
 
